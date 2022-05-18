@@ -12,6 +12,6 @@ class StatMember {
 public:
   double min, max, average;
 };
-    StatMember ComputeStatistics(const std::vector<double> &);
+    StatMember ComputeStatistics(const std::vector<double> &Input);
 }
 
