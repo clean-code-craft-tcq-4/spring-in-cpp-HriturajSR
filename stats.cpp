@@ -3,18 +3,22 @@
 Statistics::StatMember Statistics::ComputeStatistics(const std::vector<double> &Input) {
   Statistics::StatMember stats;
     
-  if (!numbers.size()) {
+  if (!Input.size()) {
     stats.average = std::numeric_limits<double>::quiet_NaN();
     stats.max = std::numeric_limits<double>::quiet_NaN();
     stats.min = std::numeric_limits<double>::quiet_NaN();
 
     return stats;
   }
-  stats.min = *std::min_element(number.begin(), number.end());
-  stats.max = *std::max_element(number.begin(), number.end());
-  stats.average =
-      std::accumulate(number.begin(), number.end(), 0.000) / number.size();
-
+  stats.min = *std::min_element(Input.begin(), Input.end());
+  stats.max = *std::max_element(Input.begin(), Input.end());
+  double avg = 0;
+	for (double input : Input)
+		{
+			avg = avg + input;
+		}
+		stats.average = avg / Input.size();
+    //stats.average = avg;
   return stats;
 
 }
