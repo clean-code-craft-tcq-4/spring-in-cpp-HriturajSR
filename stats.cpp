@@ -23,8 +23,6 @@ Statistics::StatMember Statistics::ComputeStatistics(const std::vector<double> &
 }
 void StatsAlerter::checkAndAlert(const std::vector<float>& Input)
 {
-  // float max = Input[0];
-  // max = *max_element(Input.begin(), Input.end());
    if (*max_element(Input.begin(), Input.end()) > maxT)
    {
     Alerts[0]->updateState();
