@@ -27,7 +27,7 @@ void StatsAlerter::checkAndAlert(const std::vector<float>& Input)
 	max = *max_element(Input.begin(), Input.end());
 	if (max > maxT)
 	{
-		Alerts[0]->Update();
-		Alerts[1]->Update();
+		Alerts[0]->updateState();
+		Alerts[1]->updateState();
 	}
 }
