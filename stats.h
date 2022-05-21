@@ -58,5 +58,5 @@ public:
 		maxT = maxThreshold;
 		Alerts = Alerters;
 	}
-	void checkAndAlert(const std::vector<float>& data);
+	void checkAndAlert(const std::vector<float>& Input);
 };
