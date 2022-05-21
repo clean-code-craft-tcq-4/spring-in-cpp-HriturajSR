@@ -18,7 +18,16 @@ Statistics::StatMember Statistics::ComputeStatistics(const std::vector<double> &
 			avg = avg + input;
 		}
 		stats.average = avg / Input.size();
-    //stats.average = avg;
   return stats;
 
+}
+void StatsAlerter::checkAndAlert(const std::vector<float>& Input)
+{
+	float max = Input[0];
+	max = *max_element(Input.begin(), Input.end());
+	if (max > maxThres)
+	{
+		Alerts[0]->Update();
+		Alerts[1]->Update();
+	}
 }
